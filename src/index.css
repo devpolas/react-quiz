@@ -101,6 +101,7 @@ h4 {
 
 progress {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   height: 12px;
   grid-column: 1 / -1;
@@ -141,7 +142,7 @@ progress {
 }
 
 .btn-ui {
-  float: right;
+  justify-content: center;
 }
 
 .options {
