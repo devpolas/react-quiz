@@ -142,7 +142,7 @@ progress {
 }
 
 .btn-ui {
-  justify-content: center;
+  float: right;
 }
 
 .options {
