@@ -6,6 +6,7 @@ import Error from "./Error";
 import StartScreen from "./StartScreen";
 import Question from "./Question";
 import NextButton from "./NextButton";
+import Progress from "./Progress";
 
 const initialState = {
   questions: [],
@@ -46,6 +47,10 @@ export default function App() {
 
   const { questions, status, index, answer, points } = state;
 
+  const totalPoints = questions.reduce((acc, curr) => {
+    return acc + curr.points;
+  }, 0);
+
   const numOfQuestions = questions.length;
 
   useEffect(function () {
@@ -65,6 +70,13 @@ export default function App() {
         )}
         {status === "active" && (
           <>
+            <Progress
+              index={index}
+              numOfQuestions={numOfQuestions}
+              points={points}
+              totalPoints={totalPoints}
+              answer={answer}
+            />
             <Question
               questions={questions[index]}
               dispatch={dispatch}
